@@ -18,17 +18,33 @@
 
 
 def remove_adjacent(nums):
-    """Your code goes here.  Edit this docstring."""
-    return
+    ans = []
+    for num in nums:
+        if len(ans) == 0 or not ans[-1] == num:
+            ans.append(num)
+    return ans
+
+            
+    
 
 
 # E. Given two lists sorted in increasing order, create and return a merged
 # list of all the elements in sorted order. You may modify the passed in lists.
 # The solution should work in "linear" time, making a single pass of both lists.
 # Hint: Don't use `sort` or `sorted` -- they are not linear time.
-def linear_merge(list1, list2):
-    """Your code goes here.  Edit this docstring."""
-    return
+def linear_merge(a, b):
+    results = []
+    while a and b:
+        if a[0] > b[0]:
+            results.append(b.pop(0))
+        else:
+            results.append(a.pop(0))
+    if not a:
+        results += b
+    else:
+        results += a
+    return results
+
 
 
 # Simple provided test() function used in main() to print
